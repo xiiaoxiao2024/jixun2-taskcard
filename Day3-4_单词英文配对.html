@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Day 3-4 Word & Definition Matching</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { --blue:#4FB6E8; --coral:#FF8A7A; --yellow:#FFD154; --green:#7BC96F; --purple:#B18CE8; --ink:#3a2f4d; --paper:#FFF9F0; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"Segoe UI Rounded",-apple-system,"PingFang SC",sans-serif; background:var(--paper); color:var(--ink); }
+.topbar { background:linear-gradient(120deg,var(--blue),var(--purple),var(--coral)); color:#fff; padding:20px; text-align:center; }
+.topbar h1 { margin:0 0 4px; font-size:1.5rem; }
+main { max-width:760px; margin:0 auto; padding:24px 16px 100px; }
+.status { text-align:center; font-size:1.2rem; font-weight:800; margin-bottom:16px; color:#8a7fa0; }
+.round { display:none; grid-template-columns:1fr 1.6fr; gap:24px; }
+.round.active { display:grid; }
+.col { display:flex; flex-direction:column; gap:12px; }
+.card { background:#fff; border-radius:16px; padding:14px 12px; text-align:center; font-size:1.05rem; font-weight:700;
+  box-shadow:0 4px 10px rgba(80,60,120,.1); border:3px solid #eee; cursor:pointer; user-select:none; transition: transform .15s ease; display:flex; align-items:center; justify-content:center; }
+.def-card { font-weight:500; font-size:.92rem; text-align:left; }
+.card:hover { transform: translateY(-2px); }
+.card.selected { border-color:var(--blue); background:#eaf7fd; }
+.card.matched { border-color:var(--green); background:#eafaf0; opacity:.55; cursor:default; }
+.card.shake { border-color:var(--coral); animation: shake .3s; }
+@keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+.footer-bar { position:fixed; bottom:0; left:0; right:0; background:#fff; box-shadow:0 -4px 14px rgba(0,0,0,.1); padding:14px;
+  display:flex; align-items:center; justify-content:center; gap:16px; }
+.footer-bar button { font:inherit; cursor:pointer; font-size:1.05rem; font-weight:800; padding:10px 22px; border:none; border-radius:20px; background:var(--purple); color:#fff; }
+.footer-bar button:disabled { opacity:.35; cursor:default; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>🧩 Day 3-4 Word & Definition Matching</h1>
+  <p>Click a word, then click its English definition!</p>
+</div>
+<main>
+  <p class="status" id="status">Round 1 / 5</p>
+  <div class="round active" data-round="0">
+      <div class="col"><div class="card word-card" data-pair="0">camel</div><div class="card word-card" data-pair="1">crocodile</div><div class="card word-card" data-pair="2">elephant</div><div class="card word-card" data-pair="3">giraffe</div><div class="card word-card" data-pair="4">hippo</div></div>
+      <div class="col"><div class="card def-card" data-pair="4">A large animal that lives in and near rivers.</div><div class="card def-card" data-pair="1">A large reptile with a long body and sharp teeth that lives in rivers.</div><div class="card def-card" data-pair="3">A tall animal with a very long neck.</div><div class="card def-card" data-pair="2">A very large animal with a long trunk and big ears.</div><div class="card def-card" data-pair="0">A big animal with one or two humps that lives in the desert.</div></div>
+    </div>
+<div class="round " data-round="1">
+      <div class="col"><div class="card word-card" data-pair="0">kangaroo</div><div class="card word-card" data-pair="1">lion</div><div class="card word-card" data-pair="2">monkey</div><div class="card word-card" data-pair="3">panda</div><div class="card word-card" data-pair="4">parrot</div></div>
+      <div class="col"><div class="card def-card" data-pair="4">A colorful bird that can copy sounds and words.</div><div class="card def-card" data-pair="1">A large wild cat known as a strong hunter.</div><div class="card def-card" data-pair="3">A black and white animal that eats bamboo.</div><div class="card def-card" data-pair="2">An animal that climbs trees and uses its hands well.</div><div class="card def-card" data-pair="0">An animal that jumps and carries its baby in a pouch.</div></div>
+    </div>
+<div class="round " data-round="2">
+      <div class="col"><div class="card word-card" data-pair="0">penguin</div><div class="card word-card" data-pair="1">tiger</div><div class="card word-card" data-pair="2">zebra</div><div class="card word-card" data-pair="3">mammal</div><div class="card word-card" data-pair="4">reptile</div></div>
+      <div class="col"><div class="card def-card" data-pair="0">A black and white bird that swims but cannot fly.</div><div class="card def-card" data-pair="4">An animal with scales that is usually cold-blooded.</div><div class="card def-card" data-pair="1">A large wild cat with orange fur and black stripes.</div><div class="card def-card" data-pair="2">An animal that looks like a horse with black and white stripes.</div><div class="card def-card" data-pair="3">An animal that has fur and feeds milk to its babies.</div></div>
+    </div>
+<div class="round " data-round="3">
+      <div class="col"><div class="card word-card" data-pair="0">habitat</div><div class="card word-card" data-pair="1">predator</div><div class="card word-card" data-pair="2">prey</div><div class="card word-card" data-pair="3">herd</div><div class="card word-card" data-pair="4">wild</div></div>
+      <div class="col"><div class="card def-card" data-pair="2">An animal that is hunted by another animal.</div><div class="card def-card" data-pair="3">A large group of animals that live and move together.</div><div class="card def-card" data-pair="0">The natural place where an animal lives.</div><div class="card def-card" data-pair="1">An animal that hunts other animals for food.</div><div class="card def-card" data-pair="4">Living in nature, not kept by people.</div></div>
+    </div>
+<div class="round " data-round="4">
+      <div class="col"><div class="card word-card" data-pair="0">feathers</div><div class="card word-card" data-pair="1">fur</div><div class="card word-card" data-pair="2">scales</div><div class="card word-card" data-pair="3">claws</div><div class="card word-card" data-pair="4">share</div><div class="card word-card" data-pair="5">same</div></div>
+      <div class="col"><div class="card def-card" data-pair="0">The soft covering on a bird&#x27;s body.</div><div class="card def-card" data-pair="4">To use or have something together with others.</div><div class="card def-card" data-pair="2">The small hard pieces that cover a reptile&#x27;s body.</div><div class="card def-card" data-pair="1">The soft hair that covers some animals.</div><div class="card def-card" data-pair="3">The sharp, curved nails on an animal&#x27;s feet.</div><div class="card def-card" data-pair="5">Exactly alike; not different.</div></div>
+    </div>
+</main>
+<div class="footer-bar">
+  <button id="prevRound">◀ Prev Round</button>
+  <button id="nextRound">Next Round ▶</button>
+</div>
+<script>
+(function() {
+  var rounds = document.querySelectorAll('.round');
+  var status = document.getElementById('status');
+  var prevBtn = document.getElementById('prevRound');
+  var nextBtn = document.getElementById('nextRound');
+  var currentRound = 0;
+  var totalRounds = rounds.length;
+
+  function selected() { return rounds[currentRound].querySelector('.card.selected'); }
+  function roundSize() { return rounds[currentRound].querySelectorAll('.word-card').length; }
+  function matchedCount() { return rounds[currentRound].querySelectorAll('.card.matched').length / 2; }
+  function updateStatus() {
+    status.textContent = 'Round ' + (currentRound + 1) + ' / ' + totalRounds + '  ·  Matched: ' + matchedCount() + ' / ' + roundSize();
+    prevBtn.disabled = currentRound === 0;
+    nextBtn.disabled = currentRound === totalRounds - 1;
+  }
+  function showRound(i) {
+    rounds.forEach(function(r, ri) { r.classList.toggle('active', ri === i); });
+    currentRound = i;
+    updateStatus();
+  }
+  function attachCardHandlers(round) {
+    var cards = round.querySelectorAll('.card');
+    cards.forEach(function(card) {
+      card.addEventListener('click', function() {
+        if (card.classList.contains('matched')) return;
+        var prev = selected();
+        if (!prev) { card.classList.add('selected'); return; }
+        if (prev === card) { card.classList.remove('selected'); return; }
+        if (prev.getAttribute('data-pair') === card.getAttribute('data-pair') && prev !== card &&
+            prev.classList.contains('word-card') !== card.classList.contains('word-card')) {
+          prev.classList.remove('selected');
+          prev.classList.add('matched');
+          card.classList.add('matched');
+          updateStatus();
+        } else {
+          card.classList.add('shake');
+          prev.classList.add('shake');
+          setTimeout(function() {
+            card.classList.remove('shake');
+            prev.classList.remove('shake', 'selected');
+          }, 300);
+        }
+      });
+    });
+  }
+  rounds.forEach(attachCardHandlers);
+  prevBtn.addEventListener('click', function() { if (currentRound > 0) showRound(currentRound - 1); });
+  nextBtn.addEventListener('click', function() { if (currentRound < totalRounds - 1) showRound(currentRound + 1); });
+  updateStatus();
+})();
+</script>
+</body>
+</html>

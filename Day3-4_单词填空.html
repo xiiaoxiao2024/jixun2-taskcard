@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Day 3-4 Fill in the Word</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { --blue:#4FB6E8; --coral:#FF8A7A; --yellow:#FFD154; --green:#7BC96F; --purple:#B18CE8; --ink:#3a2f4d; --paper:#FFF9F0; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"Segoe UI Rounded",-apple-system,"PingFang SC",sans-serif; background:var(--paper); color:var(--ink); }
+.topbar { background:linear-gradient(120deg,var(--blue),var(--purple),var(--coral)); color:#fff; padding:20px; text-align:center; position:sticky; top:0; z-index:5; }
+.topbar h1 { margin:0 0 4px; font-size:1.5rem; }
+main { max-width:720px; margin:0 auto; padding:20px 16px 100px; }
+.qcard { background:#fff; border-radius:20px; padding:18px 22px; margin:16px 0; box-shadow:0 6px 16px rgba(80,60,120,.1); border:3px solid #eee; }
+.qhead { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+.qnum { background:var(--purple); color:#fff; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.9rem; }
+.qword { font-size:1.4rem; font-weight:800; }
+.qsentence { font-size:1.15rem; margin:6px 0 12px; }
+.qprompt { margin:4px 0 10px; color:#8a7fa0; }
+.opts { display:grid; gap:8px; }
+.opt { display:flex; align-items:flex-start; gap:10px; background:#faf6ef; border-radius:12px; padding:10px 14px; cursor:pointer; font-size:1rem; }
+.opt:hover { background:#f3ecdd; }
+.optletter { font-weight:800; color:var(--blue); flex-shrink:0; }
+.qfeedback { margin:8px 0 0; font-weight:700; min-height:1.2em; }
+.qcard.correct { border-color:var(--green); }
+.qcard.correct .qfeedback { color:#3a8c4a; }
+.qcard.wrong { border-color:var(--coral); }
+.qcard.wrong .qfeedback { color:#c0432a; }
+.listen-btn { background:var(--coral); color:#fff; border:none; border-radius:14px; padding:8px 18px; font-weight:700; cursor:pointer; font-size:1rem; margin-bottom:8px; }
+.footer-bar { position:fixed; bottom:0; left:0; right:0; background:#fff; box-shadow:0 -4px 14px rgba(0,0,0,.1); padding:14px; display:flex; align-items:center; justify-content:center; gap:20px; }
+.footer-bar button { font:inherit; cursor:pointer; font-size:1.1rem; font-weight:800; padding:10px 26px; border:none; border-radius:22px; background:var(--purple); color:#fff; }
+.score { font-weight:800; font-size:1.2rem; color:#8a7fa0; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>✏️ Day 3-4 Fill in the Word</h1>
+  <p>26 sentences · choose the missing word · 26 questions</p>
+</div>
+<main>
+  <form id="quizForm">
+    <div class="qcard" data-answer="A" data-qnum="1">
+      <div class="qhead"><span class="qnum">1</span></div>
+      <p class="qsentence">A _____ can live without water for a long time.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q1" value="A"><span class="optletter">A</span><span class="opttext">camel</span></label><label class="opt"><input type="radio" name="q1" value="B"><span class="optletter">B</span><span class="opttext">lion</span></label><label class="opt"><input type="radio" name="q1" value="C"><span class="optletter">C</span><span class="opttext">herd</span></label><label class="opt"><input type="radio" name="q1" value="D"><span class="optletter">D</span><span class="opttext">same</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="A" data-qnum="2">
+      <div class="qhead"><span class="qnum">2</span></div>
+      <p class="qsentence">The _____ swims across the river.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q2" value="A"><span class="optletter">A</span><span class="opttext">crocodile</span></label><label class="opt"><input type="radio" name="q2" value="B"><span class="optletter">B</span><span class="opttext">predator</span></label><label class="opt"><input type="radio" name="q2" value="C"><span class="optletter">C</span><span class="opttext">camel</span></label><label class="opt"><input type="radio" name="q2" value="D"><span class="optletter">D</span><span class="opttext">hippo</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="C" data-qnum="3">
+      <div class="qhead"><span class="qnum">3</span></div>
+      <p class="qsentence">The _____ uses its trunk to drink water.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q3" value="A"><span class="optletter">A</span><span class="opttext">wild</span></label><label class="opt"><input type="radio" name="q3" value="B"><span class="optletter">B</span><span class="opttext">panda</span></label><label class="opt"><input type="radio" name="q3" value="C"><span class="optletter">C</span><span class="opttext">elephant</span></label><label class="opt"><input type="radio" name="q3" value="D"><span class="optletter">D</span><span class="opttext">crocodile</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="B" data-qnum="4">
+      <div class="qhead"><span class="qnum">4</span></div>
+      <p class="qsentence">The _____ eats leaves from the tall tree.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q4" value="A"><span class="optletter">A</span><span class="opttext">herd</span></label><label class="opt"><input type="radio" name="q4" value="B"><span class="optletter">B</span><span class="opttext">giraffe</span></label><label class="opt"><input type="radio" name="q4" value="C"><span class="optletter">C</span><span class="opttext">elephant</span></label><label class="opt"><input type="radio" name="q4" value="D"><span class="optletter">D</span><span class="opttext">same</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="D" data-qnum="5">
+      <div class="qhead"><span class="qnum">5</span></div>
+      <p class="qsentence">The _____ stays in the water all day.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q5" value="A"><span class="optletter">A</span><span class="opttext">lion</span></label><label class="opt"><input type="radio" name="q5" value="B"><span class="optletter">B</span><span class="opttext">parrot</span></label><label class="opt"><input type="radio" name="q5" value="C"><span class="optletter">C</span><span class="opttext">herd</span></label><label class="opt"><input type="radio" name="q5" value="D"><span class="optletter">D</span><span class="opttext">hippo</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="B" data-qnum="6">
+      <div class="qhead"><span class="qnum">6</span></div>
+      <p class="qsentence">The _____ jumps across the field.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q6" value="A"><span class="optletter">A</span><span class="opttext">claws</span></label><label class="opt"><input type="radio" name="q6" value="B"><span class="optletter">B</span><span class="opttext">kangaroo</span></label><label class="opt"><input type="radio" name="q6" value="C"><span class="optletter">C</span><span class="opttext">penguin</span></label><label class="opt"><input type="radio" name="q6" value="D"><span class="optletter">D</span><span class="opttext">mammal</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="B" data-qnum="7">
+      <div class="qhead"><span class="qnum">7</span></div>
+      <p class="qsentence">The _____ rests under a tree.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q7" value="A"><span class="optletter">A</span><span class="opttext">panda</span></label><label class="opt"><input type="radio" name="q7" value="B"><span class="optletter">B</span><span class="opttext">lion</span></label><label class="opt"><input type="radio" name="q7" value="C"><span class="optletter">C</span><span class="opttext">giraffe</span></label><label class="opt"><input type="radio" name="q7" value="D"><span class="optletter">D</span><span class="opttext">elephant</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="B" data-qnum="8">
+      <div class="qhead"><span class="qnum">8</span></div>
+      <p class="qsentence">The _____ climbs to the top of the tree.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q8" value="A"><span class="optletter">A</span><span class="opttext">panda</span></label><label class="opt"><input type="radio" name="q8" value="B"><span class="optletter">B</span><span class="opttext">monkey</span></label><label class="opt"><input type="radio" name="q8" value="C"><span class="optletter">C</span><span class="opttext">camel</span></label><label class="opt"><input type="radio" name="q8" value="D"><span class="optletter">D</span><span class="opttext">wild</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="B" data-qnum="9">
+      <div class="qhead"><span class="qnum">9</span></div>
+      <p class="qsentence">The _____ eats bamboo all afternoon.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q9" value="A"><span class="optletter">A</span><span class="opttext">elephant</span></label><label class="opt"><input type="radio" name="q9" value="B"><span class="optletter">B</span><span class="opttext">panda</span></label><label class="opt"><input type="radio" name="q9" value="C"><span class="optletter">C</span><span class="opttext">monkey</span></label><label class="opt"><input type="radio" name="q9" value="D"><span class="optletter">D</span><span class="opttext">crocodile</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="A" data-qnum="10">
+      <div class="qhead"><span class="qnum">10</span></div>
+      <p class="qsentence">The _____ says hello to us.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q10" value="A"><span class="optletter">A</span><span class="opttext">parrot</span></label><label class="opt"><input type="radio" name="q10" value="B"><span class="optletter">B</span><span class="opttext">panda</span></label><label class="opt"><input type="radio" name="q10" value="C"><span class="optletter">C</span><span class="opttext">predator</span></label><label class="opt"><input type="radio" name="q10" value="D"><span class="optletter">D</span><span class="opttext">scales</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="C" data-qnum="11">
+      <div class="qhead"><span class="qnum">11</span></div>
+      <p class="qsentence">The _____ swims quickly in the cold water.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q11" value="A"><span class="optletter">A</span><span class="opttext">share</span></label><label class="opt"><input type="radio" name="q11" value="B"><span class="optletter">B</span><span class="opttext">predator</span></label><label class="opt"><input type="radio" name="q11" value="C"><span class="optletter">C</span><span class="opttext">penguin</span></label><label class="opt"><input type="radio" name="q11" value="D"><span class="optletter">D</span><span class="opttext">wild</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="D" data-qnum="12">
+      <div class="qhead"><span class="qnum">12</span></div>
+      <p class="qsentence">The _____ has sharp claws.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q12" value="A"><span class="optletter">A</span><span class="opttext">lion</span></label><label class="opt"><input type="radio" name="q12" value="B"><span class="optletter">B</span><span class="opttext">scales</span></label><label class="opt"><input type="radio" name="q12" value="C"><span class="optletter">C</span><span class="opttext">giraffe</span></label><label class="opt"><input type="radio" name="q12" value="D"><span class="optletter">D</span><span class="opttext">tiger</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="B" data-qnum="13">
+      <div class="qhead"><span class="qnum">13</span></div>
+      <p class="qsentence">The _____ runs with its herd.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q13" value="A"><span class="optletter">A</span><span class="opttext">habitat</span></label><label class="opt"><input type="radio" name="q13" value="B"><span class="optletter">B</span><span class="opttext">zebra</span></label><label class="opt"><input type="radio" name="q13" value="C"><span class="optletter">C</span><span class="opttext">share</span></label><label class="opt"><input type="radio" name="q13" value="D"><span class="optletter">D</span><span class="opttext">reptile</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="B" data-qnum="14">
+      <div class="qhead"><span class="qnum">14</span></div>
+      <p class="qsentence">An elephant is a _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q14" value="A"><span class="optletter">A</span><span class="opttext">zebra</span></label><label class="opt"><input type="radio" name="q14" value="B"><span class="optletter">B</span><span class="opttext">mammal</span></label><label class="opt"><input type="radio" name="q14" value="C"><span class="optletter">C</span><span class="opttext">crocodile</span></label><label class="opt"><input type="radio" name="q14" value="D"><span class="optletter">D</span><span class="opttext">share</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="C" data-qnum="15">
+      <div class="qhead"><span class="qnum">15</span></div>
+      <p class="qsentence">A crocodile is a _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q15" value="A"><span class="optletter">A</span><span class="opttext">habitat</span></label><label class="opt"><input type="radio" name="q15" value="B"><span class="optletter">B</span><span class="opttext">lion</span></label><label class="opt"><input type="radio" name="q15" value="C"><span class="optletter">C</span><span class="opttext">reptile</span></label><label class="opt"><input type="radio" name="q15" value="D"><span class="optletter">D</span><span class="opttext">herd</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="B" data-qnum="16">
+      <div class="qhead"><span class="qnum">16</span></div>
+      <p class="qsentence">The forest is the panda&#x27;s _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q16" value="A"><span class="optletter">A</span><span class="opttext">monkey</span></label><label class="opt"><input type="radio" name="q16" value="B"><span class="optletter">B</span><span class="opttext">habitat</span></label><label class="opt"><input type="radio" name="q16" value="C"><span class="optletter">C</span><span class="opttext">reptile</span></label><label class="opt"><input type="radio" name="q16" value="D"><span class="optletter">D</span><span class="opttext">panda</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="C" data-qnum="17">
+      <div class="qhead"><span class="qnum">17</span></div>
+      <p class="qsentence">The lion is a _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q17" value="A"><span class="optletter">A</span><span class="opttext">fur</span></label><label class="opt"><input type="radio" name="q17" value="B"><span class="optletter">B</span><span class="opttext">herd</span></label><label class="opt"><input type="radio" name="q17" value="C"><span class="optletter">C</span><span class="opttext">predator</span></label><label class="opt"><input type="radio" name="q17" value="D"><span class="optletter">D</span><span class="opttext">crocodile</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="D" data-qnum="18">
+      <div class="qhead"><span class="qnum">18</span></div>
+      <p class="qsentence">The zebra is the lion&#x27;s _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q18" value="A"><span class="optletter">A</span><span class="opttext">habitat</span></label><label class="opt"><input type="radio" name="q18" value="B"><span class="optletter">B</span><span class="opttext">mammal</span></label><label class="opt"><input type="radio" name="q18" value="C"><span class="optletter">C</span><span class="opttext">kangaroo</span></label><label class="opt"><input type="radio" name="q18" value="D"><span class="optletter">D</span><span class="opttext">prey</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="A" data-qnum="19">
+      <div class="qhead"><span class="qnum">19</span></div>
+      <p class="qsentence">The zebras travel in a _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q19" value="A"><span class="optletter">A</span><span class="opttext">herd</span></label><label class="opt"><input type="radio" name="q19" value="B"><span class="optletter">B</span><span class="opttext">zebra</span></label><label class="opt"><input type="radio" name="q19" value="C"><span class="optletter">C</span><span class="opttext">kangaroo</span></label><label class="opt"><input type="radio" name="q19" value="D"><span class="optletter">D</span><span class="opttext">crocodile</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="D" data-qnum="20">
+      <div class="qhead"><span class="qnum">20</span></div>
+      <p class="qsentence">Lions live in the _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q20" value="A"><span class="optletter">A</span><span class="opttext">parrot</span></label><label class="opt"><input type="radio" name="q20" value="B"><span class="optletter">B</span><span class="opttext">mammal</span></label><label class="opt"><input type="radio" name="q20" value="C"><span class="optletter">C</span><span class="opttext">reptile</span></label><label class="opt"><input type="radio" name="q20" value="D"><span class="optletter">D</span><span class="opttext">wild</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="A" data-qnum="21">
+      <div class="qhead"><span class="qnum">21</span></div>
+      <p class="qsentence">The parrot has colorful _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q21" value="A"><span class="optletter">A</span><span class="opttext">feathers</span></label><label class="opt"><input type="radio" name="q21" value="B"><span class="optletter">B</span><span class="opttext">lion</span></label><label class="opt"><input type="radio" name="q21" value="C"><span class="optletter">C</span><span class="opttext">crocodile</span></label><label class="opt"><input type="radio" name="q21" value="D"><span class="optletter">D</span><span class="opttext">parrot</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="A" data-qnum="22">
+      <div class="qhead"><span class="qnum">22</span></div>
+      <p class="qsentence">The tiger has orange _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q22" value="A"><span class="optletter">A</span><span class="opttext">fur</span></label><label class="opt"><input type="radio" name="q22" value="B"><span class="optletter">B</span><span class="opttext">habitat</span></label><label class="opt"><input type="radio" name="q22" value="C"><span class="optletter">C</span><span class="opttext">crocodile</span></label><label class="opt"><input type="radio" name="q22" value="D"><span class="optletter">D</span><span class="opttext">herd</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="B" data-qnum="23">
+      <div class="qhead"><span class="qnum">23</span></div>
+      <p class="qsentence">The crocodile has hard _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q23" value="A"><span class="optletter">A</span><span class="opttext">elephant</span></label><label class="opt"><input type="radio" name="q23" value="B"><span class="optletter">B</span><span class="opttext">scales</span></label><label class="opt"><input type="radio" name="q23" value="C"><span class="optletter">C</span><span class="opttext">wild</span></label><label class="opt"><input type="radio" name="q23" value="D"><span class="optletter">D</span><span class="opttext">kangaroo</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="A" data-qnum="24">
+      <div class="qhead"><span class="qnum">24</span></div>
+      <p class="qsentence">The tiger has sharp _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q24" value="A"><span class="optletter">A</span><span class="opttext">claws</span></label><label class="opt"><input type="radio" name="q24" value="B"><span class="optletter">B</span><span class="opttext">zebra</span></label><label class="opt"><input type="radio" name="q24" value="C"><span class="optletter">C</span><span class="opttext">herd</span></label><label class="opt"><input type="radio" name="q24" value="D"><span class="optletter">D</span><span class="opttext">giraffe</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="A" data-qnum="25">
+      <div class="qhead"><span class="qnum">25</span></div>
+      <p class="qsentence">Elephants _____ food and water in their herd.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q25" value="A"><span class="optletter">A</span><span class="opttext">share</span></label><label class="opt"><input type="radio" name="q25" value="B"><span class="optletter">B</span><span class="opttext">wild</span></label><label class="opt"><input type="radio" name="q25" value="C"><span class="optletter">C</span><span class="opttext">elephant</span></label><label class="opt"><input type="radio" name="q25" value="D"><span class="optletter">D</span><span class="opttext">mammal</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+<div class="qcard" data-answer="C" data-qnum="26">
+      <div class="qhead"><span class="qnum">26</span></div>
+      <p class="qsentence">A lion and a tiger are not the _____ animal.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q26" value="A"><span class="optletter">A</span><span class="opttext">fur</span></label><label class="opt"><input type="radio" name="q26" value="B"><span class="optletter">B</span><span class="opttext">penguin</span></label><label class="opt"><input type="radio" name="q26" value="C"><span class="optletter">C</span><span class="opttext">same</span></label><label class="opt"><input type="radio" name="q26" value="D"><span class="optletter">D</span><span class="opttext">scales</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+  </form>
+</main>
+<div class="footer-bar">
+  <button id="checkBtn" type="button">Check My Answers ✓</button>
+  <span class="score" id="scoreDisplay"></span>
+</div>
+<script>
+(function() {
+  var checkBtn = document.getElementById('checkBtn');
+  var scoreDisplay = document.getElementById('scoreDisplay');
+  checkBtn.addEventListener('click', function() {
+    var cards = document.querySelectorAll('.qcard');
+    var correctCount = 0;
+    cards.forEach(function(card) {
+      var answer = card.getAttribute('data-answer');
+      var qnum = card.getAttribute('data-qnum');
+      var selected = card.querySelector('input[name="q' + qnum + '"]:checked');
+      card.classList.remove('correct', 'wrong');
+      var feedback = card.querySelector('.qfeedback');
+      if (!selected) { feedback.textContent = 'Not answered yet'; return; }
+      if (selected.value === answer) {
+        card.classList.add('correct'); feedback.textContent = 'Correct!'; correctCount++;
+      } else {
+        card.classList.add('wrong'); feedback.textContent = 'Try again';
+      }
+    });
+    scoreDisplay.textContent = 'Score: ' + correctCount + ' / ' + cards.length;
+  });
+})();
+</script>
+</body>
+</html>
