@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Day 5-6 Word & Definition Matching</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { --blue:#4FB6E8; --coral:#FF8A7A; --yellow:#FFD154; --green:#7BC96F; --purple:#B18CE8; --ink:#3a2f4d; --paper:#FFF9F0; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"Segoe UI Rounded",-apple-system,"PingFang SC",sans-serif; background:var(--paper); color:var(--ink); }
+.topbar { background:linear-gradient(120deg,var(--blue),var(--purple),var(--coral)); color:#fff; padding:20px; text-align:center; }
+.topbar h1 { margin:0 0 4px; font-size:1.5rem; }
+main { max-width:760px; margin:0 auto; padding:24px 16px 100px; }
+.status { text-align:center; font-size:1.2rem; font-weight:800; margin-bottom:16px; color:#8a7fa0; }
+.round { display:none; grid-template-columns:1fr 1.6fr; gap:24px; }
+.round.active { display:grid; }
+.col { display:flex; flex-direction:column; gap:12px; }
+.card { background:#fff; border-radius:16px; padding:14px 12px; text-align:center; font-size:1.05rem; font-weight:700;
+  box-shadow:0 4px 10px rgba(80,60,120,.1); border:3px solid #eee; cursor:pointer; user-select:none; transition: transform .15s ease; display:flex; align-items:center; justify-content:center; }
+.def-card { font-weight:500; font-size:.92rem; text-align:left; }
+.card:hover { transform: translateY(-2px); }
+.card.selected { border-color:var(--blue); background:#eaf7fd; }
+.card.matched { border-color:var(--green); background:#eafaf0; opacity:.55; cursor:default; }
+.card.shake { border-color:var(--coral); animation: shake .3s; }
+@keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+.footer-bar { position:fixed; bottom:0; left:0; right:0; background:#fff; box-shadow:0 -4px 14px rgba(0,0,0,.1); padding:14px;
+  display:flex; align-items:center; justify-content:center; gap:16px; }
+.footer-bar button { font:inherit; cursor:pointer; font-size:1.05rem; font-weight:800; padding:10px 22px; border:none; border-radius:20px; background:var(--purple); color:#fff; }
+.footer-bar button:disabled { opacity:.35; cursor:default; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>🧩 Day 5-6 Word & Definition Matching</h1>
+  <p>Click a word, then click its English definition!</p>
+</div>
+<main>
+  <p class="status" id="status">Round 1 / 6</p>
+  <div class="round active" data-round="0">
+      <div class="col"><div class="card word-card" data-pair="0">beans</div><div class="card word-card" data-pair="1">bread</div><div class="card word-card" data-pair="2">carrots</div><div class="card word-card" data-pair="3">cheese</div><div class="card word-card" data-pair="4">chips</div></div>
+      <div class="col"><div class="card def-card" data-pair="3">A solid food made from milk.</div><div class="card def-card" data-pair="1">A food made by baking a mixture of flour and water.</div><div class="card def-card" data-pair="0">Small seeds that grow in pods and are cooked as food.</div><div class="card def-card" data-pair="4">Thin, crispy slices of fried potato.</div><div class="card def-card" data-pair="2">Long, orange vegetables that grow under the ground.</div></div>
+    </div>
+<div class="round" data-round="1">
+      <div class="col"><div class="card word-card" data-pair="0">grapes</div><div class="card word-card" data-pair="1">hamburgers</div><div class="card word-card" data-pair="2">ice cream</div><div class="card word-card" data-pair="3">mangoes</div><div class="card word-card" data-pair="4">noodles</div></div>
+      <div class="col"><div class="card def-card" data-pair="0">Small, round, juicy fruits that grow in bunches.</div><div class="card def-card" data-pair="3">Sweet, juicy, orange-yellow tropical fruits.</div><div class="card def-card" data-pair="1">Round sandwiches with cooked meat inside.</div><div class="card def-card" data-pair="2">A sweet, cold, frozen food.</div><div class="card def-card" data-pair="4">Long, thin strips of food made from flour.</div></div>
+    </div>
+<div class="round" data-round="2">
+      <div class="col"><div class="card word-card" data-pair="0">nuts</div><div class="card word-card" data-pair="1">pasta</div><div class="card word-card" data-pair="2">peppers</div><div class="card word-card" data-pair="3">potatoes</div><div class="card word-card" data-pair="4">snacks</div></div>
+      <div class="col"><div class="card def-card" data-pair="0">Hard-shelled seeds that people eat.</div><div class="card def-card" data-pair="4">Small amounts of food eaten between meals.</div><div class="card def-card" data-pair="2">Vegetables that can taste sweet or spicy.</div><div class="card def-card" data-pair="1">An Italian food made from flour, water, and eggs.</div><div class="card def-card" data-pair="3">Round vegetables that grow under the ground.</div></div>
+    </div>
+<div class="round" data-round="3">
+      <div class="col"><div class="card word-card" data-pair="0">tomatoes</div><div class="card word-card" data-pair="1">yogurt</div><div class="card word-card" data-pair="2">flavor</div><div class="card word-card" data-pair="3">delicious</div><div class="card word-card" data-pair="4">nutritious</div></div>
+      <div class="col"><div class="card def-card" data-pair="3">Having a very good taste.</div><div class="card def-card" data-pair="2">The taste of a food.</div><div class="card def-card" data-pair="4">Full of things that are good for your body.</div><div class="card def-card" data-pair="0">Round, red or orange fruits used as vegetables.</div><div class="card def-card" data-pair="1">A thick, creamy food made from milk.</div></div>
+    </div>
+<div class="round" data-round="4">
+      <div class="col"><div class="card word-card" data-pair="0">fresh</div><div class="card word-card" data-pair="1">sweet</div><div class="card word-card" data-pair="2">sour</div><div class="card word-card" data-pair="3">spicy</div><div class="card word-card" data-pair="4">healthy</div></div>
+      <div class="col"><div class="card def-card" data-pair="4">Good for your body.</div><div class="card def-card" data-pair="3">Having a strong, hot taste.</div><div class="card def-card" data-pair="2">Having a sharp, tangy taste.</div><div class="card def-card" data-pair="1">Having a sugary taste.</div><div class="card def-card" data-pair="0">Newly made or grown, not old.</div></div>
+    </div>
+<div class="round" data-round="5">
+      <div class="col"><div class="card word-card" data-pair="0">snack</div><div class="card word-card" data-pair="1">meal</div><div class="card word-card" data-pair="2">favorite</div><div class="card word-card" data-pair="3">special</div></div>
+      <div class="col"><div class="card def-card" data-pair="3">Different from usual, in a good way.</div><div class="card def-card" data-pair="2">Liked more than all the others.</div><div class="card def-card" data-pair="0">A small amount of food eaten between meals.</div><div class="card def-card" data-pair="1">The food eaten at one time, like breakfast or dinner.</div></div>
+    </div>
+</main>
+<div class="footer-bar">
+  <button id="prevRound">◀ Prev Round</button>
+  <button id="nextRound">Next Round ▶</button>
+</div>
+<script>
+(function() {
+  var rounds = document.querySelectorAll('.round');
+  var status = document.getElementById('status');
+  var prevBtn = document.getElementById('prevRound');
+  var nextBtn = document.getElementById('nextRound');
+  var currentRound = 0;
+  var totalRounds = rounds.length;
+
+  function selected() { return rounds[currentRound].querySelector('.card.selected'); }
+  function roundSize() { return rounds[currentRound].querySelectorAll('.word-card').length; }
+  function matchedCount() { return rounds[currentRound].querySelectorAll('.card.matched').length / 2; }
+  function updateStatus() {
+    status.textContent = 'Round ' + (currentRound + 1) + ' / ' + totalRounds + '  ·  Matched: ' + matchedCount() + ' / ' + roundSize();
+    prevBtn.disabled = currentRound === 0;
+    nextBtn.disabled = currentRound === totalRounds - 1;
+  }
+  function showRound(i) {
+    rounds.forEach(function(r, ri) { r.classList.toggle('active', ri === i); });
+    currentRound = i;
+    updateStatus();
+  }
+  function attachCardHandlers(round) {
+    var cards = round.querySelectorAll('.card');
+    cards.forEach(function(card) {
+      card.addEventListener('click', function() {
+        if (card.classList.contains('matched')) return;
+        var prev = selected();
+        if (!prev) { card.classList.add('selected'); return; }
+        if (prev === card) { card.classList.remove('selected'); return; }
+        if (prev.getAttribute('data-pair') === card.getAttribute('data-pair') && prev !== card &&
+            prev.classList.contains('word-card') !== card.classList.contains('word-card')) {
+          prev.classList.remove('selected');
+          prev.classList.add('matched');
+          card.classList.add('matched');
+          updateStatus();
+        } else {
+          card.classList.add('shake');
+          prev.classList.add('shake');
+          setTimeout(function() {
+            card.classList.remove('shake');
+            prev.classList.remove('shake', 'selected');
+          }, 300);
+        }
+      });
+    });
+  }
+  rounds.forEach(attachCardHandlers);
+  prevBtn.addEventListener('click', function() { if (currentRound > 0) showRound(currentRound - 1); });
+  nextBtn.addEventListener('click', function() { if (currentRound < totalRounds - 1) showRound(currentRound + 1); });
+  updateStatus();
+})();
+</script>
+</body>
+</html>
