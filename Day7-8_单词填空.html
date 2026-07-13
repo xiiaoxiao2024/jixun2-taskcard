@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Day 7-8 Fill in the Word</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { --blue:#4FB6E8; --coral:#FF8A7A; --yellow:#FFD154; --green:#7BC96F; --purple:#B18CE8; --ink:#3a2f4d; --paper:#FFF9F0; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"Segoe UI Rounded",-apple-system,"PingFang SC",sans-serif; background:var(--paper); color:var(--ink); }
+.topbar { background:linear-gradient(120deg,var(--blue),var(--purple),var(--coral)); color:#fff; padding:20px; text-align:center; position:sticky; top:0; z-index:5; }
+.topbar h1 { margin:0 0 4px; font-size:1.5rem; }
+main { max-width:720px; margin:0 auto; padding:20px 16px 100px; }
+.qcard { background:#fff; border-radius:20px; padding:18px 22px; margin:16px 0; box-shadow:0 6px 16px rgba(80,60,120,.1); border:3px solid #eee; }
+.qhead { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+.qnum { background:var(--purple); color:#fff; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.9rem; }
+.qword { font-size:1.4rem; font-weight:800; }
+.qsentence { font-size:1.15rem; margin:6px 0 12px; }
+.qprompt { margin:4px 0 10px; color:#8a7fa0; }
+.opts { display:grid; gap:8px; }
+.opt { display:flex; align-items:flex-start; gap:10px; background:#faf6ef; border-radius:12px; padding:10px 14px; cursor:pointer; font-size:1rem; }
+.opt:hover { background:#f3ecdd; }
+.optletter { font-weight:800; color:var(--blue); flex-shrink:0; }
+.qfeedback { margin:8px 0 0; font-weight:700; min-height:1.2em; }
+.qcard.correct { border-color:var(--green); }
+.qcard.correct .qfeedback { color:#3a8c4a; }
+.qcard.wrong { border-color:var(--coral); }
+.qcard.wrong .qfeedback { color:#c0432a; }
+.listen-btn { background:var(--coral); color:#fff; border:none; border-radius:14px; padding:8px 18px; font-weight:700; cursor:pointer; font-size:1rem; margin-bottom:8px; }
+.footer-bar { position:fixed; bottom:0; left:0; right:0; background:#fff; box-shadow:0 -4px 14px rgba(0,0,0,.1); padding:14px; display:flex; align-items:center; justify-content:center; gap:20px; }
+.footer-bar button { font:inherit; cursor:pointer; font-size:1.1rem; font-weight:800; padding:10px 26px; border:none; border-radius:22px; background:var(--purple); color:#fff; }
+.score { font-weight:800; font-size:1.2rem; color:#8a7fa0; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>Day 7-8 Fill in the Word</h1>
+  <p>34 sentences · choose the missing word · 34 questions</p>
+</div>
+<main>
+  <form id="quizForm">
+    <div class="qcard" data-answer="A" data-qnum="1">
+      <div class="qhead"><span class="qnum">1</span></div>
+      <p class="qsentence">_____ is a fun activity in art class.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q1" value="D"><span class="optletter">D</span><span class="opttext">routine</span></label><label class="opt"><input type="radio" name="q1" value="A"><span class="optletter">A</span><span class="opttext">coloring</span></label><label class="opt"><input type="radio" name="q1" value="B"><span class="optletter">B</span><span class="opttext">listening</span></label><label class="opt"><input type="radio" name="q1" value="C"><span class="optletter">C</span><span class="opttext">go to school</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="2">
+      <div class="qhead"><span class="qnum">2</span></div>
+      <p class="qsentence">_____ to twenty is easy for me now.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q2" value="C"><span class="optletter">C</span><span class="opttext">routine</span></label><label class="opt"><input type="radio" name="q2" value="A"><span class="optletter">A</span><span class="opttext">counting</span></label><label class="opt"><input type="radio" name="q2" value="D"><span class="optletter">D</span><span class="opttext">activity</span></label><label class="opt"><input type="radio" name="q2" value="B"><span class="optletter">B</span><span class="opttext">go to school</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="3">
+      <div class="qhead"><span class="qnum">3</span></div>
+      <p class="qsentence">_____ paper shapes is part of our project.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q3" value="A"><span class="optletter">A</span><span class="opttext">cutting</span></label><label class="opt"><input type="radio" name="q3" value="B"><span class="optletter">B</span><span class="opttext">routine</span></label><label class="opt"><input type="radio" name="q3" value="D"><span class="optletter">D</span><span class="opttext">glue</span></label><label class="opt"><input type="radio" name="q3" value="C"><span class="optletter">C</span><span class="opttext">stairs</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="4">
+      <div class="qhead"><span class="qnum">4</span></div>
+      <p class="qsentence">_____ animals is my favorite activity.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q4" value="B"><span class="optletter">B</span><span class="opttext">subject</span></label><label class="opt"><input type="radio" name="q4" value="C"><span class="optletter">C</span><span class="opttext">scissors</span></label><label class="opt"><input type="radio" name="q4" value="D"><span class="optletter">D</span><span class="opttext">cutting</span></label><label class="opt"><input type="radio" name="q4" value="A"><span class="optletter">A</span><span class="opttext">drawing</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="5">
+      <div class="qhead"><span class="qnum">5</span></div>
+      <p class="qsentence">_____ carefully helps me understand the lesson.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q5" value="A"><span class="optletter">A</span><span class="opttext">listening</span></label><label class="opt"><input type="radio" name="q5" value="D"><span class="optletter">D</span><span class="opttext">recess</span></label><label class="opt"><input type="radio" name="q5" value="B"><span class="optletter">B</span><span class="opttext">counting</span></label><label class="opt"><input type="radio" name="q5" value="C"><span class="optletter">C</span><span class="opttext">refrigerator</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="6">
+      <div class="qhead"><span class="qnum">6</span></div>
+      <p class="qsentence">_____ is our first subject every morning.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q6" value="A"><span class="optletter">A</span><span class="opttext">reading</span></label><label class="opt"><input type="radio" name="q6" value="B"><span class="optletter">B</span><span class="opttext">lesson</span></label><label class="opt"><input type="radio" name="q6" value="C"><span class="optletter">C</span><span class="opttext">routine</span></label><label class="opt"><input type="radio" name="q6" value="D"><span class="optletter">D</span><span class="opttext">important</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="7">
+      <div class="qhead"><span class="qnum">7</span></div>
+      <p class="qsentence">_____ my name neatly took a lot of practice.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q7" value="D"><span class="optletter">D</span><span class="opttext">different</span></label><label class="opt"><input type="radio" name="q7" value="A"><span class="optletter">A</span><span class="opttext">writing</span></label><label class="opt"><input type="radio" name="q7" value="B"><span class="optletter">B</span><span class="opttext">refrigerator</span></label><label class="opt"><input type="radio" name="q7" value="C"><span class="optletter">C</span><span class="opttext">homework</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="8">
+      <div class="qhead"><span class="qnum">8</span></div>
+      <p class="qsentence">I use _____ to stick the paper shapes down.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q8" value="B"><span class="optletter">B</span><span class="opttext">subject</span></label><label class="opt"><input type="radio" name="q8" value="A"><span class="optletter">A</span><span class="opttext">glue</span></label><label class="opt"><input type="radio" name="q8" value="D"><span class="optletter">D</span><span class="opttext">drawing</span></label><label class="opt"><input type="radio" name="q8" value="C"><span class="optletter">C</span><span class="opttext">cutting</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="9">
+      <div class="qhead"><span class="qnum">9</span></div>
+      <p class="qsentence">I colored the poster with a red _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q9" value="A"><span class="optletter">A</span><span class="opttext">marker</span></label><label class="opt"><input type="radio" name="q9" value="C"><span class="optletter">C</span><span class="opttext">recess</span></label><label class="opt"><input type="radio" name="q9" value="B"><span class="optletter">B</span><span class="opttext">wash my face</span></label><label class="opt"><input type="radio" name="q9" value="D"><span class="optletter">D</span><span class="opttext">drawing</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="10">
+      <div class="qhead"><span class="qnum">10</span></div>
+      <p class="qsentence">I write my homework in my _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q10" value="D"><span class="optletter">D</span><span class="opttext">window</span></label><label class="opt"><input type="radio" name="q10" value="C"><span class="optletter">C</span><span class="opttext">cutting</span></label><label class="opt"><input type="radio" name="q10" value="B"><span class="optletter">B</span><span class="opttext">activity</span></label><label class="opt"><input type="radio" name="q10" value="A"><span class="optletter">A</span><span class="opttext">notebook</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="11">
+      <div class="qhead"><span class="qnum">11</span></div>
+      <p class="qsentence">We used _____ to cut out the shapes.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q11" value="B"><span class="optletter">B</span><span class="opttext">reading</span></label><label class="opt"><input type="radio" name="q11" value="C"><span class="optletter">C</span><span class="opttext">lesson</span></label><label class="opt"><input type="radio" name="q11" value="D"><span class="optletter">D</span><span class="opttext">window</span></label><label class="opt"><input type="radio" name="q11" value="A"><span class="optletter">A</span><span class="opttext">scissors</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="12">
+      <div class="qhead"><span class="qnum">12</span></div>
+      <p class="qsentence">I close the _____ quietly when class starts.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q12" value="A"><span class="optletter">A</span><span class="opttext">door</span></label><label class="opt"><input type="radio" name="q12" value="C"><span class="optletter">C</span><span class="opttext">reading</span></label><label class="opt"><input type="radio" name="q12" value="D"><span class="optletter">D</span><span class="opttext">writing</span></label><label class="opt"><input type="radio" name="q12" value="B"><span class="optletter">B</span><span class="opttext">lesson</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="13">
+      <div class="qhead"><span class="qnum">13</span></div>
+      <p class="qsentence">Sunlight comes through the classroom _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q13" value="D"><span class="optletter">D</span><span class="opttext">playground</span></label><label class="opt"><input type="radio" name="q13" value="B"><span class="optletter">B</span><span class="opttext">eat lunch</span></label><label class="opt"><input type="radio" name="q13" value="A"><span class="optletter">A</span><span class="opttext">window</span></label><label class="opt"><input type="radio" name="q13" value="C"><span class="optletter">C</span><span class="opttext">sink</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="14">
+      <div class="qhead"><span class="qnum">14</span></div>
+      <p class="qsentence">I get my snack from the _____ after school.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q14" value="A"><span class="optletter">A</span><span class="opttext">refrigerator</span></label><label class="opt"><input type="radio" name="q14" value="C"><span class="optletter">C</span><span class="opttext">window</span></label><label class="opt"><input type="radio" name="q14" value="B"><span class="optletter">B</span><span class="opttext">marker</span></label><label class="opt"><input type="radio" name="q14" value="D"><span class="optletter">D</span><span class="opttext">sink</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="15">
+      <div class="qhead"><span class="qnum">15</span></div>
+      <p class="qsentence">I wash my hands in the _____ before dinner.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q15" value="B"><span class="optletter">B</span><span class="opttext">lesson</span></label><label class="opt"><input type="radio" name="q15" value="A"><span class="optletter">A</span><span class="opttext">sink</span></label><label class="opt"><input type="radio" name="q15" value="C"><span class="optletter">C</span><span class="opttext">drawing</span></label><label class="opt"><input type="radio" name="q15" value="D"><span class="optletter">D</span><span class="opttext">go to bed</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="16">
+      <div class="qhead"><span class="qnum">16</span></div>
+      <p class="qsentence">My classroom is up the _____ on the second floor.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q16" value="C"><span class="optletter">C</span><span class="opttext">lesson</span></label><label class="opt"><input type="radio" name="q16" value="B"><span class="optletter">B</span><span class="opttext">recess</span></label><label class="opt"><input type="radio" name="q16" value="A"><span class="optletter">A</span><span class="opttext">stairs</span></label><label class="opt"><input type="radio" name="q16" value="D"><span class="optletter">D</span><span class="opttext">go to bed</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="17">
+      <div class="qhead"><span class="qnum">17</span></div>
+      <p class="qsentence">I _____ at seven o'clock every morning.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q17" value="A"><span class="optletter">A</span><span class="opttext">get up</span></label><label class="opt"><input type="radio" name="q17" value="B"><span class="optletter">B</span><span class="opttext">classmate</span></label><label class="opt"><input type="radio" name="q17" value="D"><span class="optletter">D</span><span class="opttext">reading</span></label><label class="opt"><input type="radio" name="q17" value="C"><span class="optletter">C</span><span class="opttext">homework</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="18">
+      <div class="qhead"><span class="qnum">18</span></div>
+      <p class="qsentence">I _____ with my classmate every day.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q18" value="C"><span class="optletter">C</span><span class="opttext">go to bed</span></label><label class="opt"><input type="radio" name="q18" value="A"><span class="optletter">A</span><span class="opttext">go to school</span></label><label class="opt"><input type="radio" name="q18" value="B"><span class="optletter">B</span><span class="opttext">refrigerator</span></label><label class="opt"><input type="radio" name="q18" value="D"><span class="optletter">D</span><span class="opttext">important</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="19">
+      <div class="qhead"><span class="qnum">19</span></div>
+      <p class="qsentence">We _____ together before school.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q19" value="A"><span class="optletter">A</span><span class="opttext">eat breakfast</span></label><label class="opt"><input type="radio" name="q19" value="B"><span class="optletter">B</span><span class="opttext">routine</span></label><label class="opt"><input type="radio" name="q19" value="D"><span class="optletter">D</span><span class="opttext">cutting</span></label><label class="opt"><input type="radio" name="q19" value="C"><span class="optletter">C</span><span class="opttext">schedule</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="20">
+      <div class="qhead"><span class="qnum">20</span></div>
+      <p class="qsentence">We _____ at school with our classmates.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q20" value="D"><span class="optletter">D</span><span class="opttext">homework</span></label><label class="opt"><input type="radio" name="q20" value="B"><span class="optletter">B</span><span class="opttext">glue</span></label><label class="opt"><input type="radio" name="q20" value="C"><span class="optletter">C</span><span class="opttext">writing</span></label><label class="opt"><input type="radio" name="q20" value="A"><span class="optletter">A</span><span class="opttext">eat lunch</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="21">
+      <div class="qhead"><span class="qnum">21</span></div>
+      <p class="qsentence">I _____ after I finish my homework.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q21" value="D"><span class="optletter">D</span><span class="opttext">wash my face</span></label><label class="opt"><input type="radio" name="q21" value="C"><span class="optletter">C</span><span class="opttext">scissors</span></label><label class="opt"><input type="radio" name="q21" value="B"><span class="optletter">B</span><span class="opttext">get up</span></label><label class="opt"><input type="radio" name="q21" value="A"><span class="optletter">A</span><span class="opttext">go to bed</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="22">
+      <div class="qhead"><span class="qnum">22</span></div>
+      <p class="qsentence">I _____ every morning and every night.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q22" value="D"><span class="optletter">D</span><span class="opttext">sink</span></label><label class="opt"><input type="radio" name="q22" value="B"><span class="optletter">B</span><span class="opttext">homework</span></label><label class="opt"><input type="radio" name="q22" value="A"><span class="optletter">A</span><span class="opttext">wash my face</span></label><label class="opt"><input type="radio" name="q22" value="C"><span class="optletter">C</span><span class="opttext">lesson</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="23">
+      <div class="qhead"><span class="qnum">23</span></div>
+      <p class="qsentence">My _____ sits next to me in Ms. Lee's class.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q23" value="B"><span class="optletter">B</span><span class="opttext">scissors</span></label><label class="opt"><input type="radio" name="q23" value="A"><span class="optletter">A</span><span class="opttext">classmate</span></label><label class="opt"><input type="radio" name="q23" value="D"><span class="optletter">D</span><span class="opttext">eat lunch</span></label><label class="opt"><input type="radio" name="q23" value="C"><span class="optletter">C</span><span class="opttext">go to school</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="24">
+      <div class="qhead"><span class="qnum">24</span></div>
+      <p class="qsentence">We run and play games on the _____ at recess.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q24" value="C"><span class="optletter">C</span><span class="opttext">eat lunch</span></label><label class="opt"><input type="radio" name="q24" value="B"><span class="optletter">B</span><span class="opttext">scissors</span></label><label class="opt"><input type="radio" name="q24" value="D"><span class="optletter">D</span><span class="opttext">refrigerator</span></label><label class="opt"><input type="radio" name="q24" value="A"><span class="optletter">A</span><span class="opttext">playground</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="25">
+      <div class="qhead"><span class="qnum">25</span></div>
+      <p class="qsentence">Art is my favorite _____ at school.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q25" value="C"><span class="optletter">C</span><span class="opttext">recess</span></label><label class="opt"><input type="radio" name="q25" value="A"><span class="optletter">A</span><span class="opttext">subject</span></label><label class="opt"><input type="radio" name="q25" value="D"><span class="optletter">D</span><span class="opttext">cutting</span></label><label class="opt"><input type="radio" name="q25" value="B"><span class="optletter">B</span><span class="opttext">listening</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="26">
+      <div class="qhead"><span class="qnum">26</span></div>
+      <p class="qsentence">Our math _____ today was about big numbers.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q26" value="A"><span class="optletter">A</span><span class="opttext">lesson</span></label><label class="opt"><input type="radio" name="q26" value="C"><span class="optletter">C</span><span class="opttext">reading</span></label><label class="opt"><input type="radio" name="q26" value="B"><span class="optletter">B</span><span class="opttext">project</span></label><label class="opt"><input type="radio" name="q26" value="D"><span class="optletter">D</span><span class="opttext">refrigerator</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="27">
+      <div class="qhead"><span class="qnum">27</span></div>
+      <p class="qsentence">I do my _____ at the kitchen table every evening.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q27" value="D"><span class="optletter">D</span><span class="opttext">listening</span></label><label class="opt"><input type="radio" name="q27" value="A"><span class="optletter">A</span><span class="opttext">homework</span></label><label class="opt"><input type="radio" name="q27" value="B"><span class="optletter">B</span><span class="opttext">go to school</span></label><label class="opt"><input type="radio" name="q27" value="C"><span class="optletter">C</span><span class="opttext">sink</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="28">
+      <div class="qhead"><span class="qnum">28</span></div>
+      <p class="qsentence">Our class is making a _____ about animals.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q28" value="B"><span class="optletter">B</span><span class="opttext">sink</span></label><label class="opt"><input type="radio" name="q28" value="C"><span class="optletter">C</span><span class="opttext">eat lunch</span></label><label class="opt"><input type="radio" name="q28" value="A"><span class="optletter">A</span><span class="opttext">project</span></label><label class="opt"><input type="radio" name="q28" value="D"><span class="optletter">D</span><span class="opttext">go to bed</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="29">
+      <div class="qhead"><span class="qnum">29</span></div>
+      <p class="qsentence">We eat a snack and play during _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q29" value="D"><span class="optletter">D</span><span class="opttext">reading</span></label><label class="opt"><input type="radio" name="q29" value="C"><span class="optletter">C</span><span class="opttext">listening</span></label><label class="opt"><input type="radio" name="q29" value="B"><span class="optletter">B</span><span class="opttext">refrigerator</span></label><label class="opt"><input type="radio" name="q29" value="A"><span class="optletter">A</span><span class="opttext">recess</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="30">
+      <div class="qhead"><span class="qnum">30</span></div>
+      <p class="qsentence">Drawing is my favorite _____ in art class.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q30" value="B"><span class="optletter">B</span><span class="opttext">eat lunch</span></label><label class="opt"><input type="radio" name="q30" value="C"><span class="optletter">C</span><span class="opttext">cutting</span></label><label class="opt"><input type="radio" name="q30" value="A"><span class="optletter">A</span><span class="opttext">activity</span></label><label class="opt"><input type="radio" name="q30" value="D"><span class="optletter">D</span><span class="opttext">lesson</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="31">
+      <div class="qhead"><span class="qnum">31</span></div>
+      <p class="qsentence">Brushing my teeth is part of my morning _____.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q31" value="D"><span class="optletter">D</span><span class="opttext">coloring</span></label><label class="opt"><input type="radio" name="q31" value="A"><span class="optletter">A</span><span class="opttext">routine</span></label><label class="opt"><input type="radio" name="q31" value="C"><span class="optletter">C</span><span class="opttext">activity</span></label><label class="opt"><input type="radio" name="q31" value="B"><span class="optletter">B</span><span class="opttext">get up</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="32">
+      <div class="qhead"><span class="qnum">32</span></div>
+      <p class="qsentence">Our class _____ shows math first, then reading.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q32" value="B"><span class="optletter">B</span><span class="opttext">reading</span></label><label class="opt"><input type="radio" name="q32" value="D"><span class="optletter">D</span><span class="opttext">recess</span></label><label class="opt"><input type="radio" name="q32" value="C"><span class="optletter">C</span><span class="opttext">playground</span></label><label class="opt"><input type="radio" name="q32" value="A"><span class="optletter">A</span><span class="opttext">schedule</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="33">
+      <div class="qhead"><span class="qnum">33</span></div>
+      <p class="qsentence">It is _____ to listen carefully in class.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q33" value="A"><span class="optletter">A</span><span class="opttext">important</span></label><label class="opt"><input type="radio" name="q33" value="C"><span class="optletter">C</span><span class="opttext">sink</span></label><label class="opt"><input type="radio" name="q33" value="D"><span class="optletter">D</span><span class="opttext">lesson</span></label><label class="opt"><input type="radio" name="q33" value="B"><span class="optletter">B</span><span class="opttext">reading</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="34">
+      <div class="qhead"><span class="qnum">34</span></div>
+      <p class="qsentence">My schedule on Monday is _____ from my schedule on Friday.</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q34" value="C"><span class="optletter">C</span><span class="opttext">reading</span></label><label class="opt"><input type="radio" name="q34" value="D"><span class="optletter">D</span><span class="opttext">glue</span></label><label class="opt"><input type="radio" name="q34" value="A"><span class="optletter">A</span><span class="opttext">different</span></label><label class="opt"><input type="radio" name="q34" value="B"><span class="optletter">B</span><span class="opttext">lesson</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+  </form>
+</main>
+<div class="footer-bar">
+  <button id="checkBtn" type="button">Check My Answers &#10003;</button>
+  <span class="score" id="scoreDisplay"></span>
+</div>
+<script>
+(function() {
+  var checkBtn = document.getElementById('checkBtn');
+  var scoreDisplay = document.getElementById('scoreDisplay');
+  checkBtn.addEventListener('click', function() {
+    var cards = document.querySelectorAll('.qcard');
+    var correctCount = 0;
+    cards.forEach(function(card) {
+      var answer = card.getAttribute('data-answer');
+      var qnum = card.getAttribute('data-qnum');
+      var selected = card.querySelector('input[name="q' + qnum + '"]:checked');
+      card.classList.remove('correct', 'wrong');
+      var feedback = card.querySelector('.qfeedback');
+      if (!selected) { feedback.textContent = 'Not answered yet'; return; }
+      if (selected.value === answer) {
+        card.classList.add('correct'); feedback.textContent = 'Correct!'; correctCount++;
+      } else {
+        card.classList.add('wrong'); feedback.textContent = 'Try again';
+      }
+    });
+    scoreDisplay.textContent = 'Score: ' + correctCount + ' / ' + cards.length;
+  });
+})();
+</script>
+</body>
+</html>

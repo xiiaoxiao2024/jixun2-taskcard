@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Day 7 Task Card · A Day in My Life</title>
+<meta property="og:title" content="Day 7 Task Card · A Day in My Life">
+<meta property="og:description" content="单词视频 · 跟读音频 · 录音作业 · 5种测试游戏">
+<meta property="og:image" content="https://jixun2.rangel.club/og-image.png">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="315">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jixun2.rangel.club/Day7_任务卡.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { --blue:#4FB6E8; --coral:#FF8A7A; --yellow:#FFD154; --green:#7BC96F; --purple:#B18CE8; --ink:#3a2f4d; --paper:#FFF9F0; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"Segoe UI Rounded",-apple-system,"PingFang SC",sans-serif; background:var(--paper); color:var(--ink); }
+.topbar { background:linear-gradient(120deg,var(--blue),var(--purple),var(--coral)); color:#fff; padding:22px; text-align:center; }
+.topbar h1 { margin:0 0 4px; font-size:1.7rem; }
+main { max-width:820px; margin:0 auto; padding:24px 16px 60px; }
+section { background:#fff; border-radius:22px; padding:22px 26px; margin-bottom:22px; box-shadow:0 6px 18px rgba(80,60,120,.08); }
+section h2 { margin-top:0; }
+.banner { display:inline-block; padding:5px 16px; border-radius:14px; font-weight:700; font-size:.9rem; margin-bottom:10px; color:#fff; }
+.banner.blue { background:var(--blue); } .banner.coral { background:var(--coral); }
+.banner.green { background:var(--green); } .banner.purple { background:var(--purple); }
+video, audio { width:100%; border-radius:14px; margin:6px 0; }
+.linklist { display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+.linklist a { text-decoration:none; background:#faf6ef; border-radius:14px; padding:10px 18px; font-weight:700; color:var(--ink); border:2px solid #eee; }
+.linklist a:hover { background:#f3ecdd; }
+.story-box { background:#faf6ef; border-radius:16px; padding:14px 18px; margin:10px 0; }
+.story-box p { margin:8px 0; font-size:1.05rem; }
+.rec-controls { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin:14px 0; }
+.rec-controls button { font:inherit; cursor:pointer; padding:10px 22px; border:none; border-radius:20px; font-weight:800; }
+#recordBtn { background:var(--coral); color:#fff; }
+#stopBtn { background:#999; color:#fff; }
+#downloadBtn { background:var(--purple); color:#fff; text-decoration:none; display:inline-block; }
+#downloadBtn.disabled-link { opacity:.4; pointer-events:none; }
+button:disabled { opacity:.4; cursor:default; }
+.rec-status { font-weight:700; color:#8a7fa0; }
+.note { font-size:.88rem; color:#a08; background:#fff6e6; border-radius:10px; padding:8px 14px; margin-top:10px; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>&#128203; Day 7 Task Card</h1>
+  <p>A Day in My Life</p>
+</div>
+<main>
+
+<section>
+  <span class="banner blue">&#128250; Step 1</span>
+  <h2>Watch the Vocabulary Video</h2>
+  <video controls src="Day7-8_词汇视频.mp4"></video>
+</section>
+
+<section>
+  <span class="banner coral">&#127911;&#65039; Step 2</span>
+  <h2>Listen to the Story (Read-Along)</h2>
+  <p>Slow, clear audio — follow along with the text as you listen.</p>
+  <p><strong>A Day in My Life</strong></p>
+  <audio controls src="Day7_ReadAlong_A_Day_in_My_Life.mp3"></audio>
+</section>
+
+<section>
+  <span class="banner green">&#127908;&#65039; Step 3 &middot; Homework</span>
+  <h2>Record Yourself Reading Along</h2>
+  <p>Click Record and read the story out loud. When you're done, download your recording and send it to your teacher.</p>
+
+  <div class="story-box"><p>Every school day, I get up at seven o'clock. First, I wash my face at the sink in the bathroom. Then I open the refrigerator and get milk and eggs to eat breakfast with my family.</p><p>After breakfast, I put on my shoes and go to school with my classmate who lives next door. We walk through the front door of the school together and find our classroom. My teacher opens the window to let in fresh air.</p><p>Our first subject is reading. Today's lesson is about a story with talking animals. I sit at my desk, listening carefully, because my teacher says listening is important. Then we practice writing new words in our notebook with a marker.</p><p>Next, we have art. Art is my favorite subject! Our activity today is a paper project about the four seasons. We use scissors for cutting, and glue to stick the pieces together. I like coloring and drawing best of all.</p><p>At recess, my classmates and I run outside to the playground. We play a counting game and take turns jumping rope. Recess is short, but it is my happiest part of the school day.</p><p>At lunch, my classmates and I sit together and eat lunch in the big cafeteria. We talk about our morning and laugh about the animal story from our reading lesson.</p><p>In the afternoon, we have math. Our class schedule shows math right after lunch every day. My teacher gives us homework about numbers to finish at home.</p><p>After school, I climb the stairs to my bedroom and do my homework at my desk. My schedule at home is different from my schedule at school, but both are important.</p><p>Before dinner, I wash my face again and help set the table. After dinner, I read a book with my mom, and then I go to bed.</p><p>Every day has the same routine — but each day at school feels a little different, because of the activities, the subjects, and the friends I see.</p></div>
+
+  <div class="rec-controls">
+    <button id="recordBtn" type="button">&#128308; Record</button>
+    <button id="stopBtn" type="button" disabled>&#9209; Stop</button>
+    <span class="rec-status" id="recStatus">Not recording</span>
+  </div>
+  <audio id="playback" controls style="display:none"></audio>
+  <div class="rec-controls">
+    <a id="downloadBtn" class="disabled-link" href="#" download="reading_practice.webm">&#11015;&#65039; Download My Recording</a>
+    <span class="rec-status" id="submitStatus"></span>
+  </div>
+
+  <p class="note">Listen back to check yourself, then download the recording and send it to your teacher (for example, over WeChat).</p>
+  <p class="note">&#9888;&#65039; 如果录音按钮没反应或者点Stop报错：请不要在微信内置浏览器里打开这个链接——点右上角"···"选择"在浏览器打开"，改用 Safari 或 Chrome 打开本页面再试。 If recording doesn't work, please open this link in Safari or Chrome directly instead of WeChat's built-in browser.</p>
+</section>
+
+<section>
+  <span class="banner purple">&#9989; Step 4</span>
+  <h2>Vocabulary Tests &amp; Games</h2>
+  <div class="linklist">
+    <a href="Day7-8_单词英文选择.html">&#128221; Choose the English Meaning</a>
+    <a href="Day7-8_单词填空.html">&#9999;&#65039; Fill in the Word</a>
+    <a href="Day7-8_听音选词.html">&#127911; Listen and Choose</a>
+    <a href="Day7-8_单词英文配对.html">&#129513; Match: Word &amp; Definition</a>
+    <a href="Day7-8_单词游戏.html">&#127918; Match: Word &amp; Chinese</a>
+</div>
+</section>
+
+</main>
+<script>
+(function() {
+  var recordBtn = document.getElementById('recordBtn');
+  var stopBtn = document.getElementById('stopBtn');
+  var downloadBtn = document.getElementById('downloadBtn');
+  var recStatus = document.getElementById('recStatus');
+  var playback = document.getElementById('playback');
+
+  var mediaRecorder, chunks = [], recordedBlob = null, activeStream = null, chosenExt = 'webm';
+
+  function pickMimeType() {
+    var candidates = ['audio/webm', 'audio/webm;codecs=opus', 'audio/mp4', 'audio/aac', 'audio/ogg'];
+    if (typeof MediaRecorder === 'undefined' || !MediaRecorder.isTypeSupported) return '';
+    for (var i = 0; i < candidates.length; i++) {
+      if (MediaRecorder.isTypeSupported(candidates[i])) return candidates[i];
+    }
+    return '';
+  }
+
+  var supported = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && typeof MediaRecorder !== 'undefined');
+  if (!supported) {
+    recordBtn.disabled = true;
+    recStatus.textContent = 'Recording is not supported in this browser. Please open this link in Safari or Chrome (not inside WeChat).';
+  }
+
+  recordBtn.addEventListener('click', function() {
+    recStatus.textContent = 'Asking for microphone permission...';
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream) {
+      try {
+        activeStream = stream;
+        chunks = [];
+        var mimeType = pickMimeType();
+        chosenExt = mimeType.indexOf('mp4') !== -1 ? 'm4a' : (mimeType.indexOf('aac') !== -1 ? 'aac' : (mimeType.indexOf('ogg') !== -1 ? 'ogg' : 'webm'));
+        mediaRecorder = mimeType ? new MediaRecorder(stream, { mimeType: mimeType }) : new MediaRecorder(stream);
+        mediaRecorder.ondataavailable = function(e) { if (e.data && e.data.size > 0) chunks.push(e.data); };
+        mediaRecorder.onerror = function(e) {
+          recStatus.textContent = 'Recording error: ' + ((e.error && e.error.message) || 'unknown error');
+        };
+        mediaRecorder.onstop = function() {
+          try {
+            recordedBlob = new Blob(chunks, { type: mediaRecorder.mimeType || 'audio/webm' });
+            var url = URL.createObjectURL(recordedBlob);
+            playback.src = url;
+            playback.style.display = 'block';
+            downloadBtn.href = url;
+            downloadBtn.setAttribute('download', 'reading_practice.' + chosenExt);
+            downloadBtn.classList.remove('disabled-link');
+            recStatus.textContent = 'Recording finished. Listen back, then download it.';
+          } catch (e2) {
+            recStatus.textContent = 'Could not process the recording: ' + e2.message;
+          } finally {
+            if (activeStream) activeStream.getTracks().forEach(function(t) { t.stop(); });
+          }
+        };
+        mediaRecorder.start();
+        recordBtn.disabled = true;
+        stopBtn.disabled = false;
+        recStatus.textContent = 'Recording...';
+      } catch (e) {
+        recStatus.textContent = 'Could not start recording: ' + e.message;
+        stream.getTracks().forEach(function(t) { t.stop(); });
+      }
+    }).catch(function(err) {
+      recStatus.textContent = 'Microphone access denied or unavailable (' + err.name + ').';
+    });
+  });
+
+  stopBtn.addEventListener('click', function() {
+    try {
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+      } else {
+        recStatus.textContent = 'Nothing was recording.';
+      }
+    } catch (e) {
+      recStatus.textContent = 'Could not stop recording: ' + e.message;
+    }
+    recordBtn.disabled = false;
+    stopBtn.disabled = true;
+  });
+})();
+</script>
+</body>
+</html>

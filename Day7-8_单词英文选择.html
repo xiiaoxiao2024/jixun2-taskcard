@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Day 7-8 Vocabulary Quiz — English Meaning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { --blue:#4FB6E8; --coral:#FF8A7A; --yellow:#FFD154; --green:#7BC96F; --purple:#B18CE8; --ink:#3a2f4d; --paper:#FFF9F0; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"Segoe UI Rounded",-apple-system,"PingFang SC",sans-serif; background:var(--paper); color:var(--ink); }
+.topbar { background:linear-gradient(120deg,var(--blue),var(--purple),var(--coral)); color:#fff; padding:20px; text-align:center; position:sticky; top:0; z-index:5; }
+.topbar h1 { margin:0 0 4px; font-size:1.5rem; }
+main { max-width:720px; margin:0 auto; padding:20px 16px 100px; }
+.qcard { background:#fff; border-radius:20px; padding:18px 22px; margin:16px 0; box-shadow:0 6px 16px rgba(80,60,120,.1); border:3px solid #eee; }
+.qhead { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+.qnum { background:var(--purple); color:#fff; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.9rem; }
+.qword { font-size:1.4rem; font-weight:800; }
+.qsentence { font-size:1.15rem; margin:6px 0 12px; }
+.qprompt { margin:4px 0 10px; color:#8a7fa0; }
+.opts { display:grid; gap:8px; }
+.opt { display:flex; align-items:flex-start; gap:10px; background:#faf6ef; border-radius:12px; padding:10px 14px; cursor:pointer; font-size:1rem; }
+.opt:hover { background:#f3ecdd; }
+.optletter { font-weight:800; color:var(--blue); flex-shrink:0; }
+.qfeedback { margin:8px 0 0; font-weight:700; min-height:1.2em; }
+.qcard.correct { border-color:var(--green); }
+.qcard.correct .qfeedback { color:#3a8c4a; }
+.qcard.wrong { border-color:var(--coral); }
+.qcard.wrong .qfeedback { color:#c0432a; }
+.listen-btn { background:var(--coral); color:#fff; border:none; border-radius:14px; padding:8px 18px; font-weight:700; cursor:pointer; font-size:1rem; margin-bottom:8px; }
+.footer-bar { position:fixed; bottom:0; left:0; right:0; background:#fff; box-shadow:0 -4px 14px rgba(0,0,0,.1); padding:14px; display:flex; align-items:center; justify-content:center; gap:20px; }
+.footer-bar button { font:inherit; cursor:pointer; font-size:1.1rem; font-weight:800; padding:10px 26px; border:none; border-radius:22px; background:var(--purple); color:#fff; }
+.score { font-weight:800; font-size:1.2rem; color:#8a7fa0; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>Day 7-8 Vocabulary Quiz — English Meaning</h1>
+  <p>Choose the English Meaning · 34 questions</p>
+</div>
+<main>
+  <form id="quizForm">
+    <div class="qcard" data-answer="A" data-qnum="1">
+      <div class="qhead"><span class="qnum">1</span></div>
+      <div class="qhead"><span class="qword">coloring</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q1" value="B"><span class="optletter">B</span><span class="opttext">To eat the midday meal.</span></label><label class="opt"><input type="radio" name="q1" value="A"><span class="optletter">A</span><span class="opttext">Filling a picture with colors.</span></label><label class="opt"><input type="radio" name="q1" value="C"><span class="optletter">C</span><span class="opttext">To eat the first meal of the day.</span></label><label class="opt"><input type="radio" name="q1" value="D"><span class="optletter">D</span><span class="opttext">Looking at words and understanding them.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="2">
+      <div class="qhead"><span class="qnum">2</span></div>
+      <div class="qhead"><span class="qword">counting</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q2" value="B"><span class="optletter">B</span><span class="opttext">To clean your face with water.</span></label><label class="opt"><input type="radio" name="q2" value="D"><span class="optletter">D</span><span class="opttext">Putting words on paper with a pen or pencil.</span></label><label class="opt"><input type="radio" name="q2" value="C"><span class="optletter">C</span><span class="opttext">The usual things you do every day, in order.</span></label><label class="opt"><input type="radio" name="q2" value="A"><span class="optletter">A</span><span class="opttext">Saying numbers in order to find a total.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="3">
+      <div class="qhead"><span class="qnum">3</span></div>
+      <div class="qhead"><span class="qword">cutting</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q3" value="A"><span class="optletter">A</span><span class="opttext">Using scissors to cut paper or other material.</span></label><label class="opt"><input type="radio" name="q3" value="D"><span class="optletter">D</span><span class="opttext">A student who is in the same class as you.</span></label><label class="opt"><input type="radio" name="q3" value="B"><span class="optletter">B</span><span class="opttext">To travel to school for lessons.</span></label><label class="opt"><input type="radio" name="q3" value="C"><span class="optletter">C</span><span class="opttext">To lie down to sleep for the night.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="4">
+      <div class="qhead"><span class="qnum">4</span></div>
+      <div class="qhead"><span class="qword">drawing</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q4" value="B"><span class="optletter">B</span><span class="opttext">Putting words on paper with a pen or pencil.</span></label><label class="opt"><input type="radio" name="q4" value="D"><span class="optletter">D</span><span class="opttext">An outdoor area at school where children play.</span></label><label class="opt"><input type="radio" name="q4" value="A"><span class="optletter">A</span><span class="opttext">Making a picture with a pen or pencil.</span></label><label class="opt"><input type="radio" name="q4" value="C"><span class="optletter">C</span><span class="opttext">Using scissors to cut paper or other material.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="5">
+      <div class="qhead"><span class="qnum">5</span></div>
+      <div class="qhead"><span class="qword">listening</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q5" value="D"><span class="optletter">D</span><span class="opttext">Having great meaning or value.</span></label><label class="opt"><input type="radio" name="q5" value="B"><span class="optletter">B</span><span class="opttext">An opening in a wall, usually with glass.</span></label><label class="opt"><input type="radio" name="q5" value="A"><span class="optletter">A</span><span class="opttext">Paying attention to sounds or someone speaking.</span></label><label class="opt"><input type="radio" name="q5" value="C"><span class="optletter">C</span><span class="opttext">A moving barrier used to open or close an entrance.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="6">
+      <div class="qhead"><span class="qnum">6</span></div>
+      <div class="qhead"><span class="qword">reading</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q6" value="D"><span class="optletter">D</span><span class="opttext">An outdoor area at school where children play.</span></label><label class="opt"><input type="radio" name="q6" value="B"><span class="optletter">B</span><span class="opttext">An opening in a wall, usually with glass.</span></label><label class="opt"><input type="radio" name="q6" value="C"><span class="optletter">C</span><span class="opttext">A machine that keeps food cold.</span></label><label class="opt"><input type="radio" name="q6" value="A"><span class="optletter">A</span><span class="opttext">Looking at words and understanding them.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="7">
+      <div class="qhead"><span class="qnum">7</span></div>
+      <div class="qhead"><span class="qword">writing</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q7" value="D"><span class="optletter">D</span><span class="opttext">A pen with a thick, colorful tip.</span></label><label class="opt"><input type="radio" name="q7" value="C"><span class="optletter">C</span><span class="opttext">A student who is in the same class as you.</span></label><label class="opt"><input type="radio" name="q7" value="A"><span class="optletter">A</span><span class="opttext">Putting words on paper with a pen or pencil.</span></label><label class="opt"><input type="radio" name="q7" value="B"><span class="optletter">B</span><span class="opttext">A machine that keeps food cold.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="8">
+      <div class="qhead"><span class="qnum">8</span></div>
+      <div class="qhead"><span class="qword">glue</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q8" value="C"><span class="optletter">C</span><span class="opttext">To clean your face with water.</span></label><label class="opt"><input type="radio" name="q8" value="D"><span class="optletter">D</span><span class="opttext">To rise out of bed.</span></label><label class="opt"><input type="radio" name="q8" value="B"><span class="optletter">B</span><span class="opttext">Something you do, especially for fun or learning.</span></label><label class="opt"><input type="radio" name="q8" value="A"><span class="optletter">A</span><span class="opttext">A sticky liquid used to join things together.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="9">
+      <div class="qhead"><span class="qnum">9</span></div>
+      <div class="qhead"><span class="qword">marker</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q9" value="A"><span class="optletter">A</span><span class="opttext">A pen with a thick, colorful tip.</span></label><label class="opt"><input type="radio" name="q9" value="D"><span class="optletter">D</span><span class="opttext">Looking at words and understanding them.</span></label><label class="opt"><input type="radio" name="q9" value="C"><span class="optletter">C</span><span class="opttext">To eat the midday meal.</span></label><label class="opt"><input type="radio" name="q9" value="B"><span class="optletter">B</span><span class="opttext">Putting words on paper with a pen or pencil.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="10">
+      <div class="qhead"><span class="qnum">10</span></div>
+      <div class="qhead"><span class="qword">notebook</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q10" value="C"><span class="optletter">C</span><span class="opttext">To eat the midday meal.</span></label><label class="opt"><input type="radio" name="q10" value="B"><span class="optletter">B</span><span class="opttext">To clean your face with water.</span></label><label class="opt"><input type="radio" name="q10" value="D"><span class="optletter">D</span><span class="opttext">A piece of school work that takes several days.</span></label><label class="opt"><input type="radio" name="q10" value="A"><span class="optletter">A</span><span class="opttext">A book of blank or lined pages for writing.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="11">
+      <div class="qhead"><span class="qnum">11</span></div>
+      <div class="qhead"><span class="qword">scissors</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q11" value="D"><span class="optletter">D</span><span class="opttext">Using scissors to cut paper or other material.</span></label><label class="opt"><input type="radio" name="q11" value="A"><span class="optletter">A</span><span class="opttext">A tool with two blades, used for cutting.</span></label><label class="opt"><input type="radio" name="q11" value="B"><span class="optletter">B</span><span class="opttext">Making a picture with a pen or pencil.</span></label><label class="opt"><input type="radio" name="q11" value="C"><span class="optletter">C</span><span class="opttext">To eat the midday meal.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="12">
+      <div class="qhead"><span class="qnum">12</span></div>
+      <div class="qhead"><span class="qword">door</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q12" value="B"><span class="optletter">B</span><span class="opttext">A tool with two blades, used for cutting.</span></label><label class="opt"><input type="radio" name="q12" value="C"><span class="optletter">C</span><span class="opttext">The usual things you do every day, in order.</span></label><label class="opt"><input type="radio" name="q12" value="D"><span class="optletter">D</span><span class="opttext">To travel to school for lessons.</span></label><label class="opt"><input type="radio" name="q12" value="A"><span class="optletter">A</span><span class="opttext">A moving barrier used to open or close an entrance.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="13">
+      <div class="qhead"><span class="qnum">13</span></div>
+      <div class="qhead"><span class="qword">window</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q13" value="D"><span class="optletter">D</span><span class="opttext">A tool with two blades, used for cutting.</span></label><label class="opt"><input type="radio" name="q13" value="B"><span class="optletter">B</span><span class="opttext">The usual things you do every day, in order.</span></label><label class="opt"><input type="radio" name="q13" value="A"><span class="optletter">A</span><span class="opttext">An opening in a wall, usually with glass.</span></label><label class="opt"><input type="radio" name="q13" value="C"><span class="optletter">C</span><span class="opttext">To lie down to sleep for the night.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="14">
+      <div class="qhead"><span class="qnum">14</span></div>
+      <div class="qhead"><span class="qword">refrigerator</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q14" value="A"><span class="optletter">A</span><span class="opttext">A machine that keeps food cold.</span></label><label class="opt"><input type="radio" name="q14" value="B"><span class="optletter">B</span><span class="opttext">A sticky liquid used to join things together.</span></label><label class="opt"><input type="radio" name="q14" value="D"><span class="optletter">D</span><span class="opttext">Paying attention to sounds or someone speaking.</span></label><label class="opt"><input type="radio" name="q14" value="C"><span class="optletter">C</span><span class="opttext">An area of study, like math or art.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="15">
+      <div class="qhead"><span class="qnum">15</span></div>
+      <div class="qhead"><span class="qword">sink</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q15" value="B"><span class="optletter">B</span><span class="opttext">A plan that shows what happens and when.</span></label><label class="opt"><input type="radio" name="q15" value="A"><span class="optletter">A</span><span class="opttext">A basin with a tap, used for washing.</span></label><label class="opt"><input type="radio" name="q15" value="C"><span class="optletter">C</span><span class="opttext">Having great meaning or value.</span></label><label class="opt"><input type="radio" name="q15" value="D"><span class="optletter">D</span><span class="opttext">An opening in a wall, usually with glass.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="16">
+      <div class="qhead"><span class="qnum">16</span></div>
+      <div class="qhead"><span class="qword">stairs</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q16" value="C"><span class="optletter">C</span><span class="opttext">A tool with two blades, used for cutting.</span></label><label class="opt"><input type="radio" name="q16" value="D"><span class="optletter">D</span><span class="opttext">To eat the midday meal.</span></label><label class="opt"><input type="radio" name="q16" value="B"><span class="optletter">B</span><span class="opttext">Putting words on paper with a pen or pencil.</span></label><label class="opt"><input type="radio" name="q16" value="A"><span class="optletter">A</span><span class="opttext">A set of steps that go up or down.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="17">
+      <div class="qhead"><span class="qnum">17</span></div>
+      <div class="qhead"><span class="qword">get up</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q17" value="D"><span class="optletter">D</span><span class="opttext">A tool with two blades, used for cutting.</span></label><label class="opt"><input type="radio" name="q17" value="B"><span class="optletter">B</span><span class="opttext">A piece of school work that takes several days.</span></label><label class="opt"><input type="radio" name="q17" value="C"><span class="optletter">C</span><span class="opttext">An opening in a wall, usually with glass.</span></label><label class="opt"><input type="radio" name="q17" value="A"><span class="optletter">A</span><span class="opttext">To rise out of bed.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="18">
+      <div class="qhead"><span class="qnum">18</span></div>
+      <div class="qhead"><span class="qword">go to school</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q18" value="A"><span class="optletter">A</span><span class="opttext">To travel to school for lessons.</span></label><label class="opt"><input type="radio" name="q18" value="B"><span class="optletter">B</span><span class="opttext">A piece of school work that takes several days.</span></label><label class="opt"><input type="radio" name="q18" value="D"><span class="optletter">D</span><span class="opttext">To clean your face with water.</span></label><label class="opt"><input type="radio" name="q18" value="C"><span class="optletter">C</span><span class="opttext">An opening in a wall, usually with glass.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="19">
+      <div class="qhead"><span class="qnum">19</span></div>
+      <div class="qhead"><span class="qword">eat breakfast</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q19" value="A"><span class="optletter">A</span><span class="opttext">To eat the first meal of the day.</span></label><label class="opt"><input type="radio" name="q19" value="B"><span class="optletter">B</span><span class="opttext">Putting words on paper with a pen or pencil.</span></label><label class="opt"><input type="radio" name="q19" value="C"><span class="optletter">C</span><span class="opttext">Making a picture with a pen or pencil.</span></label><label class="opt"><input type="radio" name="q19" value="D"><span class="optletter">D</span><span class="opttext">To travel to school for lessons.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="20">
+      <div class="qhead"><span class="qnum">20</span></div>
+      <div class="qhead"><span class="qword">eat lunch</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q20" value="A"><span class="optletter">A</span><span class="opttext">To eat the midday meal.</span></label><label class="opt"><input type="radio" name="q20" value="D"><span class="optletter">D</span><span class="opttext">Filling a picture with colors.</span></label><label class="opt"><input type="radio" name="q20" value="C"><span class="optletter">C</span><span class="opttext">An area of study, like math or art.</span></label><label class="opt"><input type="radio" name="q20" value="B"><span class="optletter">B</span><span class="opttext">Something you do, especially for fun or learning.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="21">
+      <div class="qhead"><span class="qnum">21</span></div>
+      <div class="qhead"><span class="qword">go to bed</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q21" value="C"><span class="optletter">C</span><span class="opttext">A pen with a thick, colorful tip.</span></label><label class="opt"><input type="radio" name="q21" value="A"><span class="optletter">A</span><span class="opttext">To lie down to sleep for the night.</span></label><label class="opt"><input type="radio" name="q21" value="B"><span class="optletter">B</span><span class="opttext">Saying numbers in order to find a total.</span></label><label class="opt"><input type="radio" name="q21" value="D"><span class="optletter">D</span><span class="opttext">Filling a picture with colors.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="22">
+      <div class="qhead"><span class="qnum">22</span></div>
+      <div class="qhead"><span class="qword">wash my face</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q22" value="C"><span class="optletter">C</span><span class="opttext">Saying numbers in order to find a total.</span></label><label class="opt"><input type="radio" name="q22" value="B"><span class="optletter">B</span><span class="opttext">To lie down to sleep for the night.</span></label><label class="opt"><input type="radio" name="q22" value="D"><span class="optletter">D</span><span class="opttext">Having great meaning or value.</span></label><label class="opt"><input type="radio" name="q22" value="A"><span class="optletter">A</span><span class="opttext">To clean your face with water.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="23">
+      <div class="qhead"><span class="qnum">23</span></div>
+      <div class="qhead"><span class="qword">classmate</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q23" value="A"><span class="optletter">A</span><span class="opttext">A student who is in the same class as you.</span></label><label class="opt"><input type="radio" name="q23" value="B"><span class="optletter">B</span><span class="opttext">Looking at words and understanding them.</span></label><label class="opt"><input type="radio" name="q23" value="C"><span class="optletter">C</span><span class="opttext">To eat the first meal of the day.</span></label><label class="opt"><input type="radio" name="q23" value="D"><span class="optletter">D</span><span class="opttext">To travel to school for lessons.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="24">
+      <div class="qhead"><span class="qnum">24</span></div>
+      <div class="qhead"><span class="qword">playground</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q24" value="A"><span class="optletter">A</span><span class="opttext">An outdoor area at school where children play.</span></label><label class="opt"><input type="radio" name="q24" value="B"><span class="optletter">B</span><span class="opttext">School work that students do at home.</span></label><label class="opt"><input type="radio" name="q24" value="C"><span class="optletter">C</span><span class="opttext">A basin with a tap, used for washing.</span></label><label class="opt"><input type="radio" name="q24" value="D"><span class="optletter">D</span><span class="opttext">To clean your face with water.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="25">
+      <div class="qhead"><span class="qnum">25</span></div>
+      <div class="qhead"><span class="qword">subject</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q25" value="C"><span class="optletter">C</span><span class="opttext">To lie down to sleep for the night.</span></label><label class="opt"><input type="radio" name="q25" value="A"><span class="optletter">A</span><span class="opttext">An area of study, like math or art.</span></label><label class="opt"><input type="radio" name="q25" value="D"><span class="optletter">D</span><span class="opttext">School work that students do at home.</span></label><label class="opt"><input type="radio" name="q25" value="B"><span class="optletter">B</span><span class="opttext">The usual things you do every day, in order.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="26">
+      <div class="qhead"><span class="qnum">26</span></div>
+      <div class="qhead"><span class="qword">lesson</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q26" value="B"><span class="optletter">B</span><span class="opttext">To travel to school for lessons.</span></label><label class="opt"><input type="radio" name="q26" value="A"><span class="optletter">A</span><span class="opttext">A period of time for learning about one topic.</span></label><label class="opt"><input type="radio" name="q26" value="D"><span class="optletter">D</span><span class="opttext">To clean your face with water.</span></label><label class="opt"><input type="radio" name="q26" value="C"><span class="optletter">C</span><span class="opttext">Using scissors to cut paper or other material.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="27">
+      <div class="qhead"><span class="qnum">27</span></div>
+      <div class="qhead"><span class="qword">homework</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q27" value="A"><span class="optletter">A</span><span class="opttext">School work that students do at home.</span></label><label class="opt"><input type="radio" name="q27" value="C"><span class="optletter">C</span><span class="opttext">A set of steps that go up or down.</span></label><label class="opt"><input type="radio" name="q27" value="B"><span class="optletter">B</span><span class="opttext">To eat the midday meal.</span></label><label class="opt"><input type="radio" name="q27" value="D"><span class="optletter">D</span><span class="opttext">To lie down to sleep for the night.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="28">
+      <div class="qhead"><span class="qnum">28</span></div>
+      <div class="qhead"><span class="qword">project</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q28" value="D"><span class="optletter">D</span><span class="opttext">To travel to school for lessons.</span></label><label class="opt"><input type="radio" name="q28" value="A"><span class="optletter">A</span><span class="opttext">A piece of school work that takes several days.</span></label><label class="opt"><input type="radio" name="q28" value="C"><span class="optletter">C</span><span class="opttext">Having great meaning or value.</span></label><label class="opt"><input type="radio" name="q28" value="B"><span class="optletter">B</span><span class="opttext">A tool with two blades, used for cutting.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="29">
+      <div class="qhead"><span class="qnum">29</span></div>
+      <div class="qhead"><span class="qword">recess</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q29" value="A"><span class="optletter">A</span><span class="opttext">A short break between lessons at school.</span></label><label class="opt"><input type="radio" name="q29" value="B"><span class="optletter">B</span><span class="opttext">An opening in a wall, usually with glass.</span></label><label class="opt"><input type="radio" name="q29" value="D"><span class="optletter">D</span><span class="opttext">A piece of school work that takes several days.</span></label><label class="opt"><input type="radio" name="q29" value="C"><span class="optletter">C</span><span class="opttext">To rise out of bed.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="30">
+      <div class="qhead"><span class="qnum">30</span></div>
+      <div class="qhead"><span class="qword">activity</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q30" value="D"><span class="optletter">D</span><span class="opttext">A pen with a thick, colorful tip.</span></label><label class="opt"><input type="radio" name="q30" value="A"><span class="optletter">A</span><span class="opttext">Something you do, especially for fun or learning.</span></label><label class="opt"><input type="radio" name="q30" value="B"><span class="optletter">B</span><span class="opttext">To rise out of bed.</span></label><label class="opt"><input type="radio" name="q30" value="C"><span class="optletter">C</span><span class="opttext">A piece of school work that takes several days.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="31">
+      <div class="qhead"><span class="qnum">31</span></div>
+      <div class="qhead"><span class="qword">routine</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q31" value="D"><span class="optletter">D</span><span class="opttext">A tool with two blades, used for cutting.</span></label><label class="opt"><input type="radio" name="q31" value="B"><span class="optletter">B</span><span class="opttext">A book of blank or lined pages for writing.</span></label><label class="opt"><input type="radio" name="q31" value="C"><span class="optletter">C</span><span class="opttext">A plan that shows what happens and when.</span></label><label class="opt"><input type="radio" name="q31" value="A"><span class="optletter">A</span><span class="opttext">The usual things you do every day, in order.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="32">
+      <div class="qhead"><span class="qnum">32</span></div>
+      <div class="qhead"><span class="qword">schedule</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q32" value="B"><span class="optletter">B</span><span class="opttext">Making a picture with a pen or pencil.</span></label><label class="opt"><input type="radio" name="q32" value="D"><span class="optletter">D</span><span class="opttext">An outdoor area at school where children play.</span></label><label class="opt"><input type="radio" name="q32" value="A"><span class="optletter">A</span><span class="opttext">A plan that shows what happens and when.</span></label><label class="opt"><input type="radio" name="q32" value="C"><span class="optletter">C</span><span class="opttext">An area of study, like math or art.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="33">
+      <div class="qhead"><span class="qnum">33</span></div>
+      <div class="qhead"><span class="qword">important</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q33" value="C"><span class="optletter">C</span><span class="opttext">Not the same as something else.</span></label><label class="opt"><input type="radio" name="q33" value="B"><span class="optletter">B</span><span class="opttext">Filling a picture with colors.</span></label><label class="opt"><input type="radio" name="q33" value="D"><span class="optletter">D</span><span class="opttext">Looking at words and understanding them.</span></label><label class="opt"><input type="radio" name="q33" value="A"><span class="optletter">A</span><span class="opttext">Having great meaning or value.</span></label></div>
+      <p class="qfeedback"></p>
+    </div><div class="qcard" data-answer="A" data-qnum="34">
+      <div class="qhead"><span class="qnum">34</span></div>
+      <div class="qhead"><span class="qword">different</span></div><p class="qprompt">Which definition matches this word?</p>
+      <div class="opts"><label class="opt"><input type="radio" name="q34" value="A"><span class="optletter">A</span><span class="opttext">Not the same as something else.</span></label><label class="opt"><input type="radio" name="q34" value="D"><span class="optletter">D</span><span class="opttext">A pen with a thick, colorful tip.</span></label><label class="opt"><input type="radio" name="q34" value="B"><span class="optletter">B</span><span class="opttext">A set of steps that go up or down.</span></label><label class="opt"><input type="radio" name="q34" value="C"><span class="optletter">C</span><span class="opttext">To rise out of bed.</span></label></div>
+      <p class="qfeedback"></p>
+    </div>
+  </form>
+</main>
+<div class="footer-bar">
+  <button id="checkBtn" type="button">Check My Answers &#10003;</button>
+  <span class="score" id="scoreDisplay"></span>
+</div>
+<script>
+(function() {
+  var checkBtn = document.getElementById('checkBtn');
+  var scoreDisplay = document.getElementById('scoreDisplay');
+  checkBtn.addEventListener('click', function() {
+    var cards = document.querySelectorAll('.qcard');
+    var correctCount = 0;
+    cards.forEach(function(card) {
+      var answer = card.getAttribute('data-answer');
+      var qnum = card.getAttribute('data-qnum');
+      var selected = card.querySelector('input[name="q' + qnum + '"]:checked');
+      card.classList.remove('correct', 'wrong');
+      var feedback = card.querySelector('.qfeedback');
+      if (!selected) { feedback.textContent = 'Not answered yet'; return; }
+      if (selected.value === answer) {
+        card.classList.add('correct'); feedback.textContent = 'Correct!'; correctCount++;
+      } else {
+        card.classList.add('wrong'); feedback.textContent = 'Try again';
+      }
+    });
+    scoreDisplay.textContent = 'Score: ' + correctCount + ' / ' + cards.length;
+  });
+})();
+</script>
+</body>
+</html>
